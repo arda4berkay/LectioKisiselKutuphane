@@ -19,6 +19,8 @@ namespace LectioKisiselKutuphane
         public MainWindow()
         {
             InitializeComponent();
+            kitapduzenleButton.IsEnabled = false;
+            kitapsilButton.IsEnabled = false;
         }
 
         private void UserDatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)

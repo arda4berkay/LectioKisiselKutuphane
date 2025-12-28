@@ -5,8 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LectioKisiselKutuphane"
         mc:Ignorable="d"
-        Title="Kitaplar" Height="500" Width="800">
+        Title="Kitaplar" Height="600" Width="1200">
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/background.png"
+                    Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <StackPanel
+            Grid.Column="0"
+            Grid.Row="1">
+            <Button x:Name="kitapekleButton" Margin="20 50 20 20" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/addIcon.png" Height="20"/>
+                    <TextBlock Text=" Ekle" FontSize="20"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="kitapduzenleButton" Margin="20 20 20 20">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/editIcon.png" Height="20"/>
+                    <TextBlock Text=" Düzenle" FontSize="20"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="kitapsilButton" Margin="20 20 20 20">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/deleteIcon.png" Height="20"/>
+                    <TextBlock Text=" Sil" FontSize="20"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="cikisButton" Margin="20 180 20 20">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/exitIcon.png" Height="20"/>
+                    <TextBlock Text=" Çıkış" FontSize="20"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>
