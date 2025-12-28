@@ -27,5 +27,10 @@ namespace LectioKisiselKutuphane
         {
 
         }
+
+        private void booksListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

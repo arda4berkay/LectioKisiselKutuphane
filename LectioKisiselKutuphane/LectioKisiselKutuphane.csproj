@@ -10,14 +10,25 @@
 
   <ItemGroup>
     <None Remove="Images\addIcon.png" />
+    <None Remove="Images\appIcon.ico" />
     <None Remove="Images\background.png" />
     <None Remove="Images\deleteIcon.png" />
+    <None Remove="Images\diaryIcon.png" />
     <None Remove="Images\editIcon.png" />
     <None Remove="Images\exitIcon.png" />
+    <None Remove="Images\hakkindaIcon.png" />
+    <None Remove="Images\settingsIcon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Images\addIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\appIcon.ico">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\background.png">
@@ -26,10 +37,19 @@
     <Resource Include="Images\deleteIcon.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\diaryIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\editIcon.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\exitIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\hakkindaIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\settingsIcon.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

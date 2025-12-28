@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LectioKisiselKutuphane"
         mc:Ignorable="d"
-        Title="Kitaplar" Height="600" Width="1200">
+        Title="Lectio - Kişisel Kütüphane Sistemi" Icon="/Images/appIcon.ico" Height="600" Width="1200">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Images/background.png"
@@ -29,24 +29,62 @@
                     <TextBlock Text=" Ekle" FontSize="20"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="kitapduzenleButton" Margin="20 20 20 20">
+            <Button x:Name="kitapduzenleButton" Margin="20 15 20 20">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Images/editIcon.png" Height="20"/>
                     <TextBlock Text=" Düzenle" FontSize="20"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="kitapsilButton" Margin="20 20 20 20">
+            <Button x:Name="kitapsilButton" Margin="20 15 20 20">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Images/deleteIcon.png" Height="20"/>
                     <TextBlock Text=" Sil" FontSize="20"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="cikisButton" Margin="20 180 20 20">
+            <Button x:Name="ayarlarButton" Margin="20 120 20 20">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/settingsIcon.png" Height="20"/>
+                    <TextBlock Text=" Ayarlar" FontSize="20"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="cikisButton" Margin="20 15 20 20">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Images/exitIcon.png" Height="20"/>
                     <TextBlock Text=" Çıkış" FontSize="20"/>
                 </StackPanel>
             </Button>
         </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
+            <Button x:Name="gunlukButton" Width="Auto" Height="35" Margin="20 20 20 20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/diaryIcon.png" Height="20" Margin="10 0 0 0"/>
+                    <TextBlock Text=" Günlük Modülü " FontSize="20"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <Grid Grid.Column="2" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+        </Grid>
+        <ListView Grid.Column="1" Grid.Row="1" x:Name="booksListView" SelectionChanged="booksListView_SelectionChanged" Margin="20 25 20 25">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                    <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Window>
