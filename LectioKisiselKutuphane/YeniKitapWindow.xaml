@@ -7,6 +7,51 @@
         mc:Ignorable="d"
         Title="Kitap Ekle" Height="600" Icon="/Images/appIcon.ico" Width="450">
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/background.png"
+                    Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Margin="20 50 200 20">
+            <Label Content="Kitap Adı" FontFamily="Comic Sans MS" Margin="0" Padding="0"/>
+            <TextBox x:Name="isimTextBox" Margin="0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Margin="20 10 200 20">
+            <Label Content="Kitabın Yazarı" FontFamily="Comic Sans MS" Margin="0" Padding="0"/>
+            <TextBox x:Name="yazarTextBox" Margin="0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Margin="20 10 200 20">
+            <Label Content="Kitabın Türü" FontFamily="Comic Sans MS" Margin="0" Padding="0"/>
+            <TextBox x:Name="turTextBox" Margin="0" Width="100" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Margin="20 10 200 20">
+            <Label Content="Sayfa Sayısı" FontFamily="Comic Sans MS" Margin="0" Padding="0"/>
+            <TextBox x:Name="sayfaTextBox" Margin="0" Width="100" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Margin="20 10 200 20">
+            <Label Content="Okudum mu?" FontFamily="Comic Sans MS" Margin="0" Padding="0"/>
+            <CheckBox x:Name="isReadBox" Margin="0" Width="100" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Grid.Row="5" Margin="20 10 200 20">
+            <Label Content="Kitap Hakkında Notlar" FontFamily="Comic Sans MS" Margin="0" Padding="0"/>
+            <TextBox x:Name="notlarTextBox" Margin="0" Width="250" Height="100" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <Button x:Name="kaydetButton" Grid.Row="6" Height="25" Margin="20" Width="90" HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <Image Source="/Images/saveIcon.png" Height="20"/>
+                <TextBlock Text=" Kaydet"/>
+            </StackPanel>
+        </Button>
     </Grid>
 </Window>

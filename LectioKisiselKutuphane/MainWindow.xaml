@@ -23,31 +23,31 @@
         <StackPanel
             Grid.Column="0"
             Grid.Row="1">
-            <Button x:Name="kitapekleButton" Margin="20 50 20 20" >
+            <Button x:Name="kitapekleButton" Click="kitapekleButton_Click" Margin="20 25 20 20" >
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Images/addIcon.png" Height="20"/>
                     <TextBlock Text=" Ekle" FontSize="20"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="kitapduzenleButton" Margin="20 15 20 20">
+            <Button x:Name="kitapduzenleButton" Margin="20 10 20 20">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Images/editIcon.png" Height="20"/>
                     <TextBlock Text=" Düzenle" FontSize="20"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="kitapsilButton" Margin="20 15 20 20">
+            <Button x:Name="kitapsilButton" Margin="20 10 20 20">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Images/deleteIcon.png" Height="20"/>
                     <TextBlock Text=" Sil" FontSize="20"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="ayarlarButton" Margin="20 120 20 20">
+            <Button x:Name="ayarlarButton" Margin="20 140 20 20">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Images/settingsIcon.png" Height="20"/>
                     <TextBlock Text=" Ayarlar" FontSize="20"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="cikisButton" Margin="20 15 20 20">
+            <Button x:Name="cikisButton" Margin="20 0 20 25">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Images/exitIcon.png" Height="20"/>
                     <TextBlock Text=" Çıkış" FontSize="20"/>
@@ -69,7 +69,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
         </Grid>
-        <ListView Grid.Column="1" Grid.Row="1" x:Name="booksListView" SelectionChanged="booksListView_SelectionChanged" Margin="20 25 20 25">
+        <ListView Grid.Column="1" Grid.Row="1" Background="#F3EDE4" x:Name="booksListView" SelectionChanged="booksListView_SelectionChanged" Margin="20 25 20 25">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>

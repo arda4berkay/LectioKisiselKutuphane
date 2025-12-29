@@ -17,6 +17,7 @@
     <None Remove="Images\editIcon.png" />
     <None Remove="Images\exitIcon.png" />
     <None Remove="Images\hakkindaIcon.png" />
+    <None Remove="Images\saveIcon.png" />
     <None Remove="Images\settingsIcon.png" />
   </ItemGroup>
 
@@ -47,6 +48,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\hakkindaIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\saveIcon.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\settingsIcon.png">

@@ -32,5 +32,11 @@ namespace LectioKisiselKutuphane
         {
 
         }
+
+        private void kitapekleButton_Click(object sender, RoutedEventArgs e)
+        {
+            YeniKitapWindow yeniKitapWindow = new YeniKitapWindow();
+            yeniKitapWindow.ShowDialog();
+        }
     }
 }
