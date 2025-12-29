@@ -5,7 +5,7 @@ using SQLite;
 
 namespace LectioKisiselKutuphane.Classes
 {
-    class Kitap
+    public class Kitap
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
@@ -18,5 +18,12 @@ namespace LectioKisiselKutuphane.Classes
         public int Puan { get; set; }
         public bool isRead { get; set; }
 
+        public Kitap()
+        {
+            Random random = new Random();
+            var ikonNo = random.Next(0, 8);
+
+            this.IkonNo =ikonNo;
+        }
     }
 }

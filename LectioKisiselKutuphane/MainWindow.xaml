@@ -68,6 +68,7 @@
                 <RowDefinition Height="5*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            <Image Grid.Row="1"/>
         </Grid>
         <ListView Grid.Column="1" Grid.Row="1" Background="#F3EDE4" x:Name="booksListView" SelectionChanged="booksListView_SelectionChanged" Margin="20 25 20 25">
             <ListView.ItemTemplate>

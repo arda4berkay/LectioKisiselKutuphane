@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net10.0-windows</TargetFramework>
+    <TargetFramework>net9.0-windows7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
@@ -12,6 +12,15 @@
     <None Remove="Images\addIcon.png" />
     <None Remove="Images\appIcon.ico" />
     <None Remove="Images\background.png" />
+    <None Remove="Images\BookIcons\Icon0.png" />
+    <None Remove="Images\BookIcons\Icon1.png" />
+    <None Remove="Images\BookIcons\Icon2.png" />
+    <None Remove="Images\BookIcons\Icon3.png" />
+    <None Remove="Images\BookIcons\Icon4.png" />
+    <None Remove="Images\BookIcons\Icon5.png" />
+    <None Remove="Images\BookIcons\Icon6.png" />
+    <None Remove="Images\BookIcons\Icon7.png" />
+    <None Remove="Images\BookIcons\Icon8.png" />
     <None Remove="Images\deleteIcon.png" />
     <None Remove="Images\diaryIcon.png" />
     <None Remove="Images\editIcon.png" />
@@ -33,6 +42,33 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\background.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\BookIcons\Icon0.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\BookIcons\Icon1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\BookIcons\Icon2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\BookIcons\Icon3.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\BookIcons\Icon4.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\BookIcons\Icon5.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\BookIcons\Icon6.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\BookIcons\Icon7.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\BookIcons\Icon8.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\deleteIcon.png">

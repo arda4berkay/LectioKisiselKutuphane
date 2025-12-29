@@ -45,7 +45,7 @@
         </StackPanel>
         <StackPanel Grid.Row="5" Margin="20 10 200 20">
             <Label Content="Kitap Hakkında Notlar" FontFamily="Comic Sans MS" Margin="0" Padding="0"/>
-            <TextBox x:Name="notlarTextBox" Margin="0" Width="250" Height="100" HorizontalAlignment="Left"/>
+            <TextBox x:Name="notlarTextBox" TextWrapping="Wrap"  Margin="0" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Width="250" Height="100" HorizontalAlignment="Left"/>
         </StackPanel>
         <Button x:Name="kaydetButton" Grid.Row="6" Height="25" Margin="20" Width="90" HorizontalAlignment="Left">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
