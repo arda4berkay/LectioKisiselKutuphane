@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net9.0-windows7.0</TargetFramework>
+    <TargetFramework>net10.0-windows7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
@@ -23,11 +23,15 @@
     <None Remove="Images\BookIcons\Icon8.png" />
     <None Remove="Images\deleteIcon.png" />
     <None Remove="Images\diaryIcon.png" />
-    <None Remove="Images\editIcon.png" />
     <None Remove="Images\exitIcon.png" />
+    <None Remove="Images\filterIcon.png" />
     <None Remove="Images\hakkindaIcon.png" />
     <None Remove="Images\saveIcon.png" />
     <None Remove="Images\settingsIcon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="FiltreEnum.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -77,10 +81,10 @@
     <Resource Include="Images\diaryIcon.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\editIcon.png">
+    <Resource Include="Images\exitIcon.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\exitIcon.png">
+    <Resource Include="Images\filterIcon.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\hakkindaIcon.png">

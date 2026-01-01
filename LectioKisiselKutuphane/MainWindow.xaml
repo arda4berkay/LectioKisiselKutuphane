@@ -29,19 +29,19 @@
                     <TextBlock Text=" Ekle" FontSize="20"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="kitapduzenleButton" Margin="20 10 20 20">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/Images/editIcon.png" Height="20"/>
-                    <TextBlock Text=" Düzenle" FontSize="20"/>
-                </StackPanel>
-            </Button>
-            <Button x:Name="kitapsilButton" Margin="20 10 20 20">
+            <Button IsEnabled="False" x:Name="kitapsilButton" Margin="20 10 20 20">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Images/deleteIcon.png" Height="20"/>
                     <TextBlock Text=" Sil" FontSize="20"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="ayarlarButton" Margin="20 140 20 20">
+            <Button Click="filterButton_Click" x:Name="filterButton" Margin="20 10 20 20">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/FilterIcon.png" Height="20"/>
+                    <TextBlock x:Name="filterTextBlock" Text=" Alfabe" FontSize="20"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="ayarlarButton" Margin="20 160 20 20">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Images/settingsIcon.png" Height="20"/>
                     <TextBlock Text=" Ayarlar" FontSize="20"/>
@@ -74,15 +74,21 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                    <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="5*"/>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
+                        <Image Grid.Column="0" Grid.Row="0" Height="60" Width="60"  Grid.RowSpan="2" Margin="20" Source="{Binding IkonPath}"/>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Height="40" FontSize="22" FontWeight="SemiBold" FontFamily="Comic Sans MS" VerticalAlignment="Bottom" Width="120" Text="{Binding Isim}"/>
+                        <TextBlock Grid.Column="1" Grid.Row="1" Height="40" FontSize="16" FontFamily="Comic Sans MS" VerticalAlignment="Top" Width="120" Text="{Binding Yazar}"/>
+                        <TextBox Grid.Column="2" Grid.Row="0" TextWrapping="Wrap" AcceptsReturn="True" Height="100" Width="300" Grid.RowSpan="2" Margin="10" IsReadOnly="True" Text="{Binding Notlar}"/>
+                        <CheckBox Grid.Column="3" Grid.Row="0" Grid.RowSpan="2" Height="20" Width="20" Margin="20" IsHitTestVisible="False" Focusable="False" IsChecked="{Binding IsRead}"/>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

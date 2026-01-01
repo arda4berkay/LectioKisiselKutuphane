@@ -7,23 +7,35 @@ namespace LectioKisiselKutuphane.Classes
 {
     public class Kitap
     {
+        private static readonly Random random = new();
+
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string Isim { get; set; }
-        public string Yazarp { get; set; }
-        public string Yayinci { get; set; }
+        public string Yazar { get; set; }
         public string Tur { get; set; }
-        public int IkonNo { get; set; }
+        public string IkonPath { get; set; }
         public int Sayfa { get; set; }
-        public int Puan { get; set; }
-        public bool isRead { get; set; }
+        public string Notlar { get; set; }
+        public bool IsRead { get; set; }
 
-        public Kitap()
+        //sql bağlantısı için
+        public Kitap() { }
+
+        public Kitap(string isim, string yazar, string tur, string notlar, int sayfa, bool isRead)
         {
-            Random random = new Random();
-            var ikonNo = random.Next(0, 8);
+            
+            //Random random = new Random();
 
-            this.IkonNo =ikonNo;
+            var ikonNo = random.Next(0, 8);
+            this.IkonPath = IkonPath = $"pack://application:,,,/Images/BookIcons/Icon{ikonNo}.png";
+
+            this.Isim = isim;
+            this.Notlar = notlar;
+            this.Yazar = yazar;
+            this.Tur = tur;
+            this.Sayfa = sayfa;
+            this.IsRead = isRead;
         }
     }
 }

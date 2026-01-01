@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LectioKisiselKutuphane"
         mc:Ignorable="d"
-        Title="Kitap Ekle" Height="600" Icon="/Images/appIcon.ico" Width="450">
+        Title="Kitap Ekle" Height="580" Icon="/Images/appIcon.ico" Width="450">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Images/background.png"
@@ -23,7 +23,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Margin="20 50 200 20">
+        <StackPanel Grid.Row="0" Margin="20 30 200 20">
             <Label Content="Kitap Adı" FontFamily="Comic Sans MS" Margin="0" Padding="0"/>
             <TextBox x:Name="isimTextBox" Margin="0"/>
         </StackPanel>
@@ -35,23 +35,37 @@
             <Label Content="Kitabın Türü" FontFamily="Comic Sans MS" Margin="0" Padding="0"/>
             <TextBox x:Name="turTextBox" Margin="0" Width="100" HorizontalAlignment="Left"/>
         </StackPanel>
-        <StackPanel Grid.Row="3" Margin="20 10 200 20">
-            <Label Content="Sayfa Sayısı" FontFamily="Comic Sans MS" Margin="0" Padding="0"/>
-            <TextBox x:Name="sayfaTextBox" Margin="0" Width="100" HorizontalAlignment="Left"/>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Margin="20 10 5 20">
+                <Label Content="Sayfa Sayısı" FontFamily="Comic Sans MS" Margin="0" Padding="0"/>
+                <TextBox x:Name="sayfaTextBox" Margin="0" Width="100" HorizontalAlignment="Left"/>
+            </StackPanel>
+            <Label Grid.Column="1" x:Name="numberWarningLabel" Margin="0 20 20 20" Content="Bir tam sayı giriniz!" Foreground="Red" Visibility="Hidden"/>
+        </Grid>
+        <StackPanel Grid.Row="4" Margin="20 10 20 20">
+            <Label Content="Kitap Hakkında Notlar" FontFamily="Comic Sans MS" Margin="0" Padding="0"/>
+            <TextBox x:Name="notlarTextBox" TextWrapping="Wrap" Margin="0" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Width="250" Height="100" HorizontalAlignment="Left"/>
         </StackPanel>
-        <StackPanel Grid.Row="4" Margin="20 10 200 20">
+        <StackPanel Grid.Row="5" Margin="20 20 200 0">
             <Label Content="Okudum mu?" FontFamily="Comic Sans MS" Margin="0" Padding="0"/>
             <CheckBox x:Name="isReadBox" Margin="0" Width="100" HorizontalAlignment="Left"/>
         </StackPanel>
-        <StackPanel Grid.Row="5" Margin="20 10 200 20">
-            <Label Content="Kitap Hakkında Notlar" FontFamily="Comic Sans MS" Margin="0" Padding="0"/>
-            <TextBox x:Name="notlarTextBox" TextWrapping="Wrap"  Margin="0" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Width="250" Height="100" HorizontalAlignment="Left"/>
-        </StackPanel>
-        <Button x:Name="kaydetButton" Grid.Row="6" Height="25" Margin="20" Width="90" HorizontalAlignment="Left">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                <Image Source="/Images/saveIcon.png" Height="20"/>
-                <TextBlock Text=" Kaydet"/>
-            </StackPanel>
-        </Button>
+        <Grid Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" x:Name="kaydetButton" Click="kaydetButton_Click" Height="25" Margin="20 20 0 25" Width="90" HorizontalAlignment="Left">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Image Source="/Images/saveIcon.png" Height="20"/>
+                    <TextBlock Text=" Kaydet"/>
+                </StackPanel>
+            </Button>
+            <Label Grid.Column="1" x:Name="warningLabel" Margin="20" Content="Lütfen tüm alanları doldurunuz!" Foreground="Red" Visibility="Hidden"/>
+        </Grid>
     </Grid>
 </Window>
