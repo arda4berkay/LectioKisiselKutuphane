@@ -29,7 +29,7 @@
                     <TextBlock Text=" Ekle" FontSize="20"/>
                 </StackPanel>
             </Button>
-            <Button IsEnabled="False" x:Name="kitapsilButton" Margin="20 10 20 20">
+            <Button IsEnabled="False" x:Name="kitapsilButton" Click="kitapsilButton_Click" Margin="20 10 20 20">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Images/deleteIcon.png" Height="20"/>
                     <TextBlock Text=" Sil" FontSize="20"/>
@@ -47,7 +47,7 @@
                     <TextBlock Text=" Ayarlar" FontSize="20"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="cikisButton" Margin="20 0 20 25">
+            <Button x:Name="cikisButton" Click="cikisButton_Click" Margin="20 0 20 25">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Images/exitIcon.png" Height="20"/>
                     <TextBlock Text=" Çıkış" FontSize="20"/>
@@ -70,28 +70,100 @@
             </Grid.RowDefinitions>
             <Image Grid.Row="1"/>
         </Grid>
+        
+        <!--Kitap listesi-->
         <ListView Grid.Column="1" Grid.Row="1" Background="#F3EDE4" x:Name="booksListView" SelectionChanged="booksListView_SelectionChanged" Margin="20 25 20 25">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="2"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="0.6*"/>
                         </Grid.RowDefinitions>
                         <Image Grid.Column="0" Grid.Row="0" Height="60" Width="60"  Grid.RowSpan="2" Margin="20" Source="{Binding IkonPath}"/>
-                        <TextBlock Grid.Column="1" Grid.Row="0" Height="40" FontSize="22" FontWeight="SemiBold" FontFamily="Comic Sans MS" VerticalAlignment="Bottom" Width="120" Text="{Binding Isim}"/>
-                        <TextBlock Grid.Column="1" Grid.Row="1" Height="40" FontSize="16" FontFamily="Comic Sans MS" VerticalAlignment="Top" Width="120" Text="{Binding Yazar}"/>
+                        <Viewbox Grid.Column="1" Grid.Row="0" Height="40" Width="120" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                            <TextBlock Text="{Binding Isim}" FontFamily="Comic Sans MS" FontWeight="Regular" />
+                        </Viewbox>
+                        <Viewbox Grid.Column="1" Grid.Row="1" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120">
+                            <TextBlock FontFamily="Comic Sans MS" Text="{Binding Yazar}"/>
+                        </Viewbox>
+                        <!-- Aynı bilgi tekrar tekrar göstermeye gerek yok 
                         <TextBox Grid.Column="2" Grid.Row="0" TextWrapping="Wrap" AcceptsReturn="True" Height="100" Width="300" Grid.RowSpan="2" Margin="10" IsReadOnly="True" Text="{Binding Notlar}"/>
-                        <CheckBox Grid.Column="3" Grid.Row="0" Grid.RowSpan="2" Height="20" Width="20" Margin="20" IsHitTestVisible="False" Focusable="False" IsChecked="{Binding IsRead}"/>
+                        <CheckBox Grid.Column="3" Grid.Row="0" Grid.RowSpan="2" Height="20" Width="20" Margin="20" IsHitTestVisible="False" Focusable="False" IsChecked="{Binding IsRead}"/>-->
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        
+            <!--yan panel-->
+        <Border Grid.Row="2" 
+                Grid.Column="2"
+                Background="#F3EDE4"
+                Margin="10 25 10 25">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Column="0" 
+                        Grid.Row="0"
+                        Background="#FFFFF0"
+                        Margin="5"
+                        Padding="10">
+                    <!--evet-->
+                    <Image x:Name="resimImage"/>
+                </Border>
+                <StackPanel Grid.Row="0" Grid.Column="1">
+                    <StackPanel>
+                        <Label Content="Kitap Adı" FontFamily="Comic Sans MS" Margin="10 10 10 0" Padding="0"/>
+                        <TextBox x:Name="isimTextBox" TextChanged="isimTextBox_TextChanged" Background="#FFFFF0" Margin="10 0 10 10"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <Label Content="Yazar" FontFamily="Comic Sans MS" Margin="10 0 10 0" Padding="0"/>
+                        <TextBox x:Name="yazarTextBox" TextChanged="yazarTextBox_TextChanged" Background="#FFFFF0" Margin="10 0 10 10"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <Label Content="Tür" FontFamily="Comic Sans MS" Margin="10 0 10 0" Padding="0"/>
+                        <TextBox x:Name="turTextBox" TextChanged="turTextBox_TextChanged" Background="#FFFFF0" Margin="10 0 10 10"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <Label Content="Sayfa Sayısı" FontFamily="Comic Sans MS" Margin="10 0 10 0" Padding="0"/>
+                        <TextBox x:Name="sayfaTextBox" TextChanged="sayfaTextBox_TextChanged" Background="#FFFFF0" Margin="10 0 10 10"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+                    <Button Margin="5 0 0 0" x:Name="refreshButton" Click="refreshButton_Click">
+                        <Image Height="20" ToolTip="Başka renk bir ikon seçin" Source="/Images/Refresh.png"/>
+                    </Button>
+                    <Button Margin="10 0 0 0" x:Name="uploadButton" Click="uploadButton_Click">
+                        <Image Height="20" ToolTip="Bilgisayarınızdan bir resmi ikon olarak kullanın." Source="/Images/Upload.png"/>
+                    </Button>
+                </StackPanel>
+                <TextBox x:Name="notlarTextBlock" TextChanged="notlarTextBlock_TextChanged" Grid.Row="2" Grid.ColumnSpan="2" Margin="5" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Background="#FFFFF0"/>
+                <CheckBox x:Name="okudummuCheckBox" Click="okudummuCheckBox_Click" Grid.ColumnSpan="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" Content="Okudum mu?"/>
+                <Button IsEnabled="False" Grid.Row="4" Margin="5 2 2 2" x:Name="kaydetButton" Click="kaydetButton_Click" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Image Source="/Images/saveIcon.png" Height="20"/>
+                        <TextBlock Text=" Kaydet "/>
+                    </StackPanel>
+                </Button>
+            </Grid>
+        </Border>
     </Grid>
 </Window>

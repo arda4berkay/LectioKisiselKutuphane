@@ -23,11 +23,14 @@
     <None Remove="Images\BookIcons\Icon8.png" />
     <None Remove="Images\deleteIcon.png" />
     <None Remove="Images\diaryIcon.png" />
+    <None Remove="Images\EmptyBook.png" />
     <None Remove="Images\exitIcon.png" />
     <None Remove="Images\filterIcon.png" />
     <None Remove="Images\hakkindaIcon.png" />
+    <None Remove="Images\Refresh.png" />
     <None Remove="Images\saveIcon.png" />
     <None Remove="Images\settingsIcon.png" />
+    <None Remove="Images\Upload.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -81,6 +84,9 @@
     <Resource Include="Images\diaryIcon.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\EmptyBook.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\exitIcon.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -90,12 +96,33 @@
     <Resource Include="Images\hakkindaIcon.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\Refresh.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\saveIcon.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\settingsIcon.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\Upload.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
