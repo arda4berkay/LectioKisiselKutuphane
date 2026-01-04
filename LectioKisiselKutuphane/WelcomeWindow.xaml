@@ -1,0 +1,19 @@
+﻿<Window x:Class="LectioKisiselKutuphane.WelcomeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LectioKisiselKutuphane"
+        mc:Ignorable="d"
+        Title="Hoşgeldiniz!" Height="120" Width="600">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/background.png"
+                    Stretch="UniformToFill"/>
+        </Grid.Background>
+        <StackPanel Margin="0 10 0 10">
+            <Label VerticalAlignment="Center" HorizontalAlignment="Center" Background="#FFFFF0" Content="Lectio'yu ilk defa kullandığınızı görüyoruz. Veritabanına örnek kitaplar eklemek ister misiniz?"/>
+            <Button  Margin="0 5 0 0" Width="50" x:Name="evetButton" Click="evetButton_Click" Content="Evet"/>
+        </StackPanel>
+    </Grid>
+</Window>

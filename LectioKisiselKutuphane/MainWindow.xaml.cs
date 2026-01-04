@@ -19,7 +19,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-//filtre türleri ekle ok, kitap detay penceresi ekle, ilk giriş ekranı ekle, ayarlar ekle, hakkında ekle 
+//filtre türleri ekle ok, kitap detay penceresi ekle ok, ilk giriş ekranı ekle, ayarlar ekle, hakkında ekle 
 namespace LectioKisiselKutuphane
 {
     /// <summary>
@@ -35,15 +35,24 @@ namespace LectioKisiselKutuphane
         public MainWindow()
         {
             InitializeComponent();
+            IsFirstTime();
             InitalizeDatabase();
             KitaplarSirala("Alfabetik");
             
         }
-        
+
+        private void IsFirstTime()
+        {
+            if (File.Exists(App.databasePath))
+                return;
+            WelcomeWindow welcomeWindow = new();
+            welcomeWindow.ShowDialog();
+        }
         //başlangıç için
         //TODO daha az iğrenç bir yol bul
-        private void InitalizeDatabase()
+        internal void InitalizeDatabase()
         {
+
             Database = new SQLiteConnection(App.databasePath);
             Database.CreateTable<Kitap>();
             Kitaplar = Database.Table<Kitap>().ToList();
